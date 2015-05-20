@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+
+  sudo: yes
+
+  vars_files:
+    - ../../config.yml
+
+  roles:
+    - update
+    - php
+    - mysql

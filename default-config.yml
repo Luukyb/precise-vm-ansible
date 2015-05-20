@@ -1,0 +1,8 @@
+---
+
+vagrant_hostname: precise64-ansible
+
+# Database details.
+db_name: mysite
+db_user: mysite
+db_password: mysite
