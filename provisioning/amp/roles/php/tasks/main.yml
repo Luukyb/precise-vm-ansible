@@ -3,7 +3,28 @@
 - name: Install PHP and associated packages
   apt: name=php5
 
+- name: Add apache vhosts configuration.
+  template:
+    src: "vhost-default.conf.j2"
+    dest: "/etc/apache2/sites-available/default"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - Restart Apache
+
+- name: Add vhost symlink in sites-enabled.
+  file:
+    src: "/etc/apache2/sites-available/default"
+    dest: "/etc/apache2/sites-enabled/default"
+    state: link
+  notify:
+    - Restart Apache
+
 - name: Install PHP GD library
   apt: name=php5-gd state=latest
+
+- name: Local PHP configuration file
+  action: template src=etc-php5-apache2-local-ini.j2 dest=/etc/php5/apache2/conf.d/local.ini
   notify:
     - Restart Apache

@@ -2,7 +2,14 @@
 
 vagrant_hostname: precise64-ansible
 
+# Your site root path.
+site_root_path: "/var/www/site/www"
+
 # Database details.
 db_name: mysite
 db_user: mysite
 db_password: mysite
+
+# PHP settings.
+php_max_execution_time: "128"
+php_memory_limit: "256M"

@@ -11,3 +11,5 @@
     - update
     - php
     - mysql
+    - composer
+    - drush

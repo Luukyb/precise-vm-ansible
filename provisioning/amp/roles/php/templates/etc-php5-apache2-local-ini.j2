@@ -1,0 +1,10 @@
+; Maximum execution time of each script, in seconds
+; http://php.net/max-execution-time
+; Note: This directive is hardcoded to 0 for the CLI SAPI
+max_execution_time = {{ php_max_execution_time }}
+
+; Maximum amount of memory a script may consume (128MB)
+; http://php.net/memory-limit
+memory_limit = {{ php_memory_limit }}
+
+display_errors = On

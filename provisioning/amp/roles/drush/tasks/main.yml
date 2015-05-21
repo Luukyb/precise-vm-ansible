@@ -1,0 +1,4 @@
+---
+
+- name: drush install
+  shell: composer global require drush/drush:7.*
