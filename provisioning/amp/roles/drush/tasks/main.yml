@@ -1,4 +1,14 @@
 ---
 
-- name: drush install
-  shell: composer global require drush/drush:7.*
+- name: install php packages
+  shell: COMPOSER_HOME="/usr/local/composer" composer global require {{ item }}
+  with_items:
+    - drush/drush:{{ drush_version }}
+
+- name: add composer bin to path
+  lineinfile: >
+    dest=/etc/environment
+    state=present
+    backrefs=yes
+    regexp='PATH=(["]*)((?!.*?/usr/local/composer/vendor/bin).*?)(["]*)$'
+    line="PATH=\1\2:/usr/local/composer/vendor/bin\3"

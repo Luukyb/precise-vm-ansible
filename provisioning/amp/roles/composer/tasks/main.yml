@@ -4,7 +4,7 @@
   shell: curl -sS https://getcomposer.org/installer | php
 
 - name: move composer.phar
-  shell: mv composer.phar /usr/local/bin/composer
+  shell: mv composer.phar /usr/local/bin/composer creates=/usr/local/bin/composer
 
 - name: export path variable for composer
   shell: export PATH="/usr/local/bin/composer:$PATH"

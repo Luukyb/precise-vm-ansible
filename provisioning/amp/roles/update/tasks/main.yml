@@ -2,3 +2,16 @@
 
 - name: apt-get update the server
   apt: update_cache=yes
+
+- name: generate locale
+  locale_gen: name={{ locale }} state=present
+
+- name: set locale
+  command: /usr/sbin/update-locale LANG={{ locale }} LC_ALL={{ locale }} LANGUAGE={{ language }}
+
+- name: set /etc/localtime
+  command: /bin/cp /usr/share/zoneinfo/{{ timezone }} /etc/localtime
+
+- name: set /etc/timezone
+  lineinfile: dest=/etc/timezone line={{ timezone }}
+  notify: update tzdata

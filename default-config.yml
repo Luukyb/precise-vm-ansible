@@ -2,6 +2,10 @@
 
 vagrant_hostname: precise64-ansible
 
+locale: en_US.UTF-8
+language: 'en_US:en'
+timezone: Etc/UTC
+
 # Your site root path.
 site_root_path: "/var/www/site/www"
 
@@ -13,3 +17,6 @@ db_password: mysite
 # PHP settings.
 php_max_execution_time: "128"
 php_memory_limit: "256M"
+
+# Drush.
+drush_version: 7.*
