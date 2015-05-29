@@ -1,6 +1,8 @@
 ---
 
 vagrant_hostname: precise64-ansible
+# Virtual machine memory setup.
+vm_ram: "2048"
 
 locale: en_US.UTF-8
 language: 'en_US:en'
@@ -10,13 +12,14 @@ timezone: Etc/UTC
 site_root_path: "/var/www/site/www"
 
 # Database details.
+mysql_root_password: root
 db_name: mysite
 db_user: mysite
 db_password: mysite
 
 # PHP settings.
 php_max_execution_time: "128"
-php_memory_limit: "256M"
+php_memory_limit: "512M"
 
 # Drush.
 drush_version: 7.*

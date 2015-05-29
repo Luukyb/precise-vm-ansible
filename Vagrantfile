@@ -27,7 +27,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "data/site", "/var/www/site", :nfs => true
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1024"
+    vb.memory = vconfig['vm_ram']
   end
 
   config.vm.provision "ansible" do |ansible|

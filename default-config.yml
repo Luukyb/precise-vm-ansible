@@ -10,6 +10,7 @@ timezone: Etc/UTC
 site_root_path: "/var/www/site/www"
 
 # Database details.
+mysql_root_password: root
 db_name: mysite
 db_user: mysite
 db_password: mysite
