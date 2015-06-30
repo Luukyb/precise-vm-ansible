@@ -1,11 +1,11 @@
 # Vagrant LAMP based on Ubuntu Precise
 
 Provisioned using Ansible.
-This is a setup for development only, do not use in production.
 
 Disclamer:
-If you need a LAMP stack with the latest Ubuntu and packages, basically don't use this.
-I created it as I needed Ubuntu Precise and PHP 5.3.
+- This is a setup for development only, do not use in production.
+- If you need a LAMP stack with the latest Ubuntu and packages, basically don't use this.
+- I created it as I needed Ubuntu Precise and PHP 5.3.
 
 ## What's inside?
 
@@ -27,13 +27,12 @@ Project tested on MAC.
 ## How to use it?
 
 Your website's index needs to be into a subfolder: data/site/www
-You can also confifure the path using the variable site_root_path. See bellow Variables available.
 
-Then copy the default config file:
-$ cp default-config.yml config.yml
+You can also configure the path using the variable site_root_path. See bellow Variables available.
 
-Start the VM:
-$ vagrant up
+Copy the default config file: $ cp default-config.yml config.yml
+
+Start the VM: $ vagrant up
 
 ## Variables available
 
