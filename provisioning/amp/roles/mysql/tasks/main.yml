@@ -1,4 +1,3 @@
 ---
 - include: setup.yml
-- include: update_root.yml
 - include: create_db.yml

@@ -2,24 +2,11 @@
 - name: Install MySQL server
   apt: name=mysql-server state=latest
 
-- name: Install Apache module for MySQL authentication
-  apt: name=libapache2-mod-auth-mysql state=latest
-
 - name: Install MySQL module for PHP
   apt: name=php5-mysql state=latest
 
-- name: Copy my.cnf global MySQL configuration.
-  template:
-    src: my.cnf.j2
-    dest: "/etc/mysql/my-local-perf.cnf"
-    owner: root
-    group: root
-    mode: 0644
-  notify: restart mysql
-
-- name: Include performance settings into my-local-perf.cnf.
-  lineinfile: dest=/etc/mysql/my.cnf line="!include /etc/mysql/my-local-perf.cnf"
-  notify: restart mysql
-
 - name: Ensure MySQL is started and enabled on boot.
   service: "name=mysql state=started enabled=yes"
+
+- name: Install python-mysqldb for ansible command mysql_user.
+  apt: name=python-mysqldb state=latest
