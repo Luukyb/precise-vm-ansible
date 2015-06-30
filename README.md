@@ -1,6 +1,7 @@
 # Vagrant LAMP based on Ubuntu Precise
 
 Provisioned using Ansible.
+This is a setup for development only, do not use in production.
 
 Disclamer:
 If you need a LAMP stack with the latest Ubuntu and packages, basically don't use this.
@@ -10,22 +11,23 @@ I created it as I needed Ubuntu Precise and PHP 5.3.
 
   - Ubuntu Precise64
   - Aapche 2.2.x
-  - PHP 5.3.x (+ php5-gd)
+  - PHP 5.3.x (+ php5-gd + php5-curl)
   - MySQL 5.5.x
   - Composer
   - Drush (configurable)
 
-## Dependencies (VirtualBox, Vagrant, Ansible)
+## Dependencies
 
   1. VirtualBox
   2. Vagrant
   3. Ansible
 
-Project tested on MAC only.
+Project tested on MAC.
 
 ## How to use it?
 
-Your website's index needs to be into data/site
+Your website's index needs to be into a subfolder: data/site/www
+You can also confifure the path using the variable site_root_path. See bellow Variables available.
 
 Then copy the default config file:
 $ cp default-config.yml config.yml
@@ -35,11 +37,15 @@ $ vagrant up
 
 ## Variables available
 
+Some variables availables to be configured into your config.yml:
   - vagrant_hostname
+  - vagrant_ip
+  - vm_ram
   - locale
   - language
   - timezone
   - site_root_path
+  - mysql_root_password
   - db_name
   - db_user
   - db_password
