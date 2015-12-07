@@ -10,6 +10,7 @@
   roles:
     - update
     - php
+    - xdebug
     - mysql
     - phpmyadmin
     - composer
