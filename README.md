@@ -11,10 +11,12 @@ Disclamer:
 
   - Ubuntu Precise64
   - Aapche 2.2.x
-  - PHP 5.3.x (+ php5-gd + php5-curl)
+  - PHP 5.3.x (+ php5-gd + php5-curl + php5-xdebug*)
   - MySQL 5.5.x
   - Composer
   - Drush (configurable)
+
+* Remove the commented lines on xdebug's configuration file to activate it.
 
 ## Dependencies
 
