@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "data/site", "/var/www/site", :nfs => true
+  config.vm.synced_folder vconfig['local_sites_path'], vconfig['vm_sites_path'], :nfs => true
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = vconfig['vm_ram']

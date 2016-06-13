@@ -9,8 +9,13 @@ locale: en_US.UTF-8
 language: 'en_US:en'
 timezone: Etc/UTC
 
-# Your site root path.
-site_root_path: "/var/www/site/www"
+# Your local path for all sites.
+local_sites_path: "~/VM/myproject/sites"
+# Your VM local path for all sites.
+vm_sites_path: "/var/www/sites"
+
+# Your site index path.
+site_root_path: "/var/www/sites/mysite/www"
 
 # Database details.
 mysql_root_password: root
